@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, RouterLink, RouterLinkActive } from '@angular/router';
+import { Router } from '@angular/router';
 import { FlowbiteService } from '../../../shared/services/flowbite/flowbite.service';
 
 @Component({
-  selector: 'app-home',
+  selector: 'app-check',
   standalone: true,
-  imports: [RouterLink,RouterLinkActive],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+  imports: [],
+  templateUrl: './check.component.html',
+  styleUrl: './check.component.scss'
 })
-export class HomeComponent implements OnInit{
+export class CheckComponent implements OnInit {
   constructor( private _Router:Router ,private _FlowbiteService:FlowbiteService){}
   ngOnInit(): void {
     this._FlowbiteService.loadFlowbite((flowbite: any) => {

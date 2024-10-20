@@ -1,15 +1,15 @@
-import { code } from './../../../shared/interfaces/data';
+// import { code } from './../../../shared/interfaces/data';
 import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ForgetpasswordComponent } from '../forgetpassword/forgetpassword.component';
-import { FlowbiteService } from '../../../shared/services/flowbite/flowbite.service';
-import { AuthService } from '../../../shared/services/auth/auth.service';
+import { FlowbiteService } from '../../../../shared/services/flowbite/flowbite.service';
+import { AuthService } from '../../../../shared/services/auth/auth.service';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-changepassword',
   standalone: true,
-  imports: [ForgetpasswordComponent ,ReactiveFormsModule],
+  imports: [ReactiveFormsModule],
   templateUrl: './changepassword.component.html',
   styleUrl: './changepassword.component.scss'
 })
@@ -40,17 +40,17 @@ constructor(private _FlowbiteService:FlowbiteService ,private _AuthService:AuthS
     this.changepasswordform.value.email=this.email;
     if(this.changepasswordform.valid){
       //connect api
-      this._AuthService.resetPassword(this.changepasswordform.value).subscribe({
-        next:(res)=>{
-          this.isLoading = false;
-          this._Router.navigate(["/login"]);
-        },
-        error:(err) => {
+      // this._AuthService.resetPassword(this.changepasswordform.value).subscribe({
+      //   next:(res)=>{
+      //     this.isLoading = false;
+      //     this._Router.navigate(["/login"]);
+      //   },
+      //   error:(err) => {
 
-          this.isLoading = false;
-          this.errmsg = err.error.message;
-        }
-      });
+      //     this.isLoading = false;
+      //     this.errmsg = err.error.message;
+      //   }
+      // });
     }
   }
 }

@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, RouterLink, RouterLinkActive } from '@angular/router';
+import { Router } from '@angular/router';
 import { FlowbiteService } from '../../../shared/services/flowbite/flowbite.service';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [RouterLink,RouterLinkActive],
+  imports: [],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })

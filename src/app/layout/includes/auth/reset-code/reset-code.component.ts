@@ -1,9 +1,9 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { FlowbiteService } from '../../../shared/services/flowbite/flowbite.service';
+import { FlowbiteService } from '../../../../shared/services/flowbite/flowbite.service';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators,} from "@angular/forms";
 
 import { ForgetpasswordComponent } from '../forgetpassword/forgetpassword.component';
-import { AuthService } from '../../../shared/services/auth/auth.service';
+import { AuthService } from '../../../../shared/services/auth/auth.service';
 import { Router } from '@angular/router';
 @Component({
   selector: 'app-reset-code',
@@ -32,21 +32,21 @@ export class ResetCodeComponent implements OnInit {
 
 submitverifyResetCode(){
   this.isLoading = true;
-  if(this.verifyResetCodeForm.valid){
-    //connect api
-    this._AuthService.verifyResetCode(this.verifyResetCodeForm.value).subscribe({
-      next:(res)=>{
-        this.isLoading = false;
-        this.resetformflag.emit(false);
-        this.changepasswordformflag.emit(true);
-      },
-      error:(err) => {
+  // if(this.verifyResetCodeForm.valid){
+  //   //connect api
+  //   this._AuthService.verifyResetCode(this.verifyResetCodeForm.value).subscribe({
+  //     next:(res)=>{
+  //       this.isLoading = false;
+  //       this.resetformflag.emit(false);
+  //       this.changepasswordformflag.emit(true);
+  //     },
+  //     error:(err) => {
 
-        this.isLoading = false;
-        this.errmsg = err.error.message;
-      }
-    });
-  }
+  //       this.isLoading = false;
+  //       this.errmsg = err.error.message;
+  //     }
+  //   });
+  // }
 }
 
 }

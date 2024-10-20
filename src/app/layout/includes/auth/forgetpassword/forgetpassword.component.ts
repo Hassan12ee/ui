@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FlowbiteService } from '../../../shared/services/flowbite/flowbite.service';
+import { FlowbiteService } from '../../../../shared/services/flowbite/flowbite.service';
 import { AbstractControl, FormControl, FormGroup, ReactiveFormsModule, Validators,} from "@angular/forms";
-import { AuthService } from '../../../shared/services/auth/auth.service';
+import { AuthService } from '../../../../shared/services/auth/auth.service';
 import { Router } from '@angular/router';
 import { ResetCodeComponent } from '../reset-code/reset-code.component';
 import { ChangepasswordComponent } from '../changepassword/changepassword.component';
@@ -42,22 +42,22 @@ export class ForgetpasswordComponent implements OnInit {
   }
   submitforgetpassword(){
     this.isLoading = true;
-    if(this.forgetpasswordForm.valid){
-      //connect api
-      this.email = this.forgetpasswordForm.value.email;
-      this._AuthService.Forgetpassword(this.forgetpasswordForm.value).subscribe({
-        next:(res)=>{
-          this.isLoading = false;
-          this.emailformflag=false;
-          this.resetformflag=true;
-        },
-        error:(err) => {
+    // if(this.forgetpasswordForm.valid){
+    //   //connect api
+    //   this.email = this.forgetpasswordForm.value.email;
+    //   this._AuthService.Forgetpassword(this.forgetpasswordForm.value).subscribe({
+    //     next:(res)=>{
+    //       this.isLoading = false;
+    //       this.emailformflag=false;
+    //       this.resetformflag=true;
+    //     },
+    //     error:(err) => {
 
-          this.isLoading = false;
-          this.errmsg = err.error.message;
-        }
-      });
-    }
+    //       this.isLoading = false;
+    //       this.errmsg = err.error.message;
+    //     }
+    //   });
+    // }
   }
 
 

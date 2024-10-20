@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, RouterLink, RouterLinkActive } from '@angular/router';
+import { Router } from '@angular/router';
 import { FlowbiteService } from '../../../shared/services/flowbite/flowbite.service';
 
 @Component({
-  selector: 'app-home',
+  selector: 'app-chat',
   standalone: true,
-  imports: [RouterLink,RouterLinkActive],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+  imports: [],
+  templateUrl: './chat.component.html',
+  styleUrl: './chat.component.scss'
 })
-export class HomeComponent implements OnInit{
+export class ChatComponent  implements OnInit{
   constructor( private _Router:Router ,private _FlowbiteService:FlowbiteService){}
   ngOnInit(): void {
     this._FlowbiteService.loadFlowbite((flowbite: any) => {
